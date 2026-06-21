@@ -1,0 +1,27 @@
+LOGIN TOEVOEGEN - TECHKWADRAAT CRM
+
+1. Ga in Supabase naar Authentication > Users.
+2. Klik Add user > Create new user.
+3. Maak voor alle 6 gebruikers een eigen account aan met e-mailadres en tijdelijk wachtwoord.
+4. Zet Auto Confirm User aan als Supabase daarom vraagt.
+5. Ga naar SQL Editor.
+6. Open supabase-login-beveiliging.sql uit deze map.
+7. Plak het volledige script en klik Run.
+8. Test lokaal met Live Server.
+9. Werkt alles? Commit en push naar GitHub.
+
+Let op: na stap 6 werkt de CRM alleen nog voor ingelogde gebruikers.
+
+
+Wachtwoord vergeten / reset
+---------------------------
+Gebruikers kunnen op het login-scherm klikken op "Wachtwoord vergeten?".
+Daarna vult de gebruiker het e-mailadres in en ontvangt een Supabase resetlink.
+
+Controleer in Supabase:
+Authentication > URL Configuration
+- Site URL: de live URL van STOER CRM
+- Redirect URLs: de live URL toestaan
+
+Voor lokaal testen kan tijdelijk ook de lokale URL worden toegevoegd, bijvoorbeeld:
+http://127.0.0.1:5501/index.html

@@ -1,0 +1,16 @@
+STOER CRM 3.3.9 - compacte livegang polish
+
+Aangepast:
+- Relatiekaarten kleiner en rustiger gemaakt.
+- Op brede schermen kunnen relatiekaarten nu in vier kolommen staan.
+- Minder witruimte op scholen, bedrijven en instellingen.
+- Dashboard compacter gemaakt zonder informatie te verliezen.
+- Agenda compacter gemaakt; dagen en afspraken nemen minder verticale ruimte in.
+- Relatiedetailpagina compacter gemaakt: contactgegevens, KPI's en activiteiten staan dichter bij elkaar.
+- Sidebar iets smaller gemaakt en content beter gecentreerd.
+- Tabellen en rapportages iets compacter gemaakt.
+
+Doel:
+- Minder scrollen.
+- Meer CRM-gevoel.
+- Betere verhouding tussen overzicht en detail.

@@ -1,0 +1,41 @@
+STOER CRM 3.4.2 - deploy-safe uploadinstructie
+
+Belangrijk: upload niet alleen index.html. Vervang de volledige inhoud van de webroot met deze bestanden/mappen.
+
+De webroot moet er zo uitzien:
+
+/index.html
+/css/style.css
+/js/app.js
+/js/supabase.js
+/js/data.js
+/js/store.js
+/js/views/dashboard.js
+/js/views/agenda.js
+/js/views/relaties.js
+/js/views/team.js
+/js/views/rapportages.js
+/js/views/beheer.js
+
+Controle na upload:
+
+1. Open direct in browser:
+   https://kwadraat.tech2xplore.nl/css/style.css?v=342-deploy
+   Verwacht: CSS-tekst. Geen 404, geen HTML-loginpagina.
+
+2. Open direct in browser:
+   https://kwadraat.tech2xplore.nl/js/views/beheer.js?v=342-deploy
+   Verwacht: JavaScript-tekst. Geen 404, geen HTML-loginpagina.
+
+3. Daarna de CRM openen met harde refresh:
+   Windows: Ctrl + F5
+   Mac: Cmd + Shift + R
+
+4. Als de pagina nog fout opent: DevTools > Network > Disable cache aanzetten > herladen.
+   Controleer vooral status van css/style.css en js/views/beheer.js.
+
+Waarschijnlijke oorzaak als Live Server lokaal wel werkt maar online niet:
+- oude css/js staan nog in cache;
+- alleen index.html is vervangen;
+- map css of js/views is niet mee geüpload;
+- bestanden zijn in een extra submap terechtgekomen in plaats van direct in de webroot.

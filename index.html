@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STOER CRM</title>
+  <link rel="stylesheet" href="css/style.css?v=342-deploy">
+</head>
+<body>
+  <section id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo stoer-login-brand">
+        <div>
+          <h1><span class="stoer-highlight">STO</span>ER CRM</h1>
+          <p>Log in om verder te gaan.</p>
+        </div>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <label>
+          E-mailadres
+          <input id="login-email" type="email" autocomplete="email" required placeholder="naam@organisatie.nl">
+        </label>
+
+        <label>
+          Wachtwoord
+          <input id="login-password" type="password" autocomplete="current-password" required placeholder="Wachtwoord">
+        </label>
+
+        <button type="submit">Inloggen</button>
+        <p id="login-error" class="login-error"></p>
+
+        <div class="login-support">
+          <button type="button" class="login-link-button" onclick="openForgotPasswordModal()">Wachtwoord vergeten?</button>
+          <small>Vraag een veilige resetlink aan via je e-mailadres.</small>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div id="crm-app" class="app app-hidden">
+    <aside class="sidebar">
+      <div class="logo stoer-brand">
+        <span class="stoer-main"><span class="stoer-highlight">STO</span>ER</span>
+        <span class="stoer-crm">CRM</span>
+      </div>
+
+      <nav>
+        <button class="nav-link active" data-view="dashboard">Dashboard</button>
+        <button class="nav-link" data-view="agenda">Agenda</button>
+        <button class="nav-link" data-view="scholen">Scholen</button>
+        <button class="nav-link" data-view="bedrijven">Bedrijven</button>
+        <button class="nav-link" data-view="instellingen">Instellingen</button>
+        <button class="nav-link" data-view="team">Team</button>
+        <button class="nav-link" data-view="rapportages">Rapportages</button>
+        <button class="nav-link" data-view="beheer">Beheer</button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="sidebar-user-label">Ingelogd als</div>
+        <span id="user-email"></span>
+        <button type="button" class="password-button" onclick="openPasswordModal()">Wachtwoord wijzigen</button>
+        <button type="button" class="logout-button" onclick="logout()">Uitloggen</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 id="page-title"></h1>
+          <p id="page-subtitle" class="page-subtitle"></p>
+        </div>
+        <div id="page-actions"></div>
+      </div>
+
+      <div id="app-view"></div>
+    </main>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="js/supabase.js?v=342-deploy"></script>
+  <script src="js/views/dashboard.js?v=342-deploy"></script>
+  <script src="js/views/agenda.js?v=342-deploy"></script>
+  <script src="js/views/relaties.js?v=342-deploy"></script>
+  <script src="js/views/team.js?v=342-deploy"></script>
+  <script src="js/views/rapportages.js?v=342-deploy"></script>
+  <script src="js/views/beheer.js?v=342-deploy"></script>
+  <script src="js/app.js?v=342-deploy"></script>
+</body>
+</html>

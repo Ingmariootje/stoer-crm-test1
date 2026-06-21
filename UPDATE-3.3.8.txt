@@ -1,0 +1,9 @@
+STOER CRM 3.3.8 - livegang polish
+
+- Sidebar vastgezet: de blauwe navigatiebalk blijft op zijn plek bij scrollen.
+- Hoofdcontent scrollt zelfstandig naast de sidebar.
+- Dashboard compacter en rustiger gemaakt: minder verticale ruimte, betere verhouding tussen blokken.
+- Dashboardkaarten en relationele kaarten subtieler gemaakt met betere hover/focus-states.
+- Relatie-detailpagina leesbaarder gemaakt: sticky rechterkolom werkt binnen de content-scroll.
+- Agenda-zijkolom en detailpanelen visueel rustiger gemaakt.
+- Kleine typografie- en spacingcorrecties voor een professionelere CRM-uitstraling.

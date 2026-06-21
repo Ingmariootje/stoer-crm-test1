@@ -1,0 +1,12 @@
+STOER CRM 3.4.2 - wachtwoord reset
+
+Toegevoegd:
+- Link Wachtwoord vergeten? op het login-scherm.
+- Popup om een resetlink te versturen via Supabase Auth.
+- Veilige melding zonder te tonen of een e-mailadres wel/niet bestaat.
+- Resetlink-flow: gebruiker kiest via de link direct een nieuw wachtwoord.
+- Na succesvol instellen wordt de gebruiker ingelogd en het CRM geopend.
+
+Nog controleren in Supabase:
+- Authentication > URL Configuration: Site URL en Redirect URLs moeten de live CRM-url toestaan.
+- Voor test lokaal eventueel http://127.0.0.1:5501/index.html of de gebruikte localhost-url toevoegen.

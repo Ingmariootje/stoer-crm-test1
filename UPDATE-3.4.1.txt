@@ -1,0 +1,15 @@
+STOER CRM 3.4.1 - mail dedupe en importcontrole
+
+Aangepast:
+- Mailselectie groepeert dubbele mailadressen automatisch.
+- Een contactpersoon met meerdere scholen komt nog maar één keer in de BCC-lijst.
+- In de mailselectie staat zichtbaar hoeveel relaties aan hetzelfde mailadres gekoppeld zijn.
+- Bulkcommunicatie vanuit mailselectie blijft wel alle gekoppelde relaties meenemen.
+- Rapportage-mail gebruikt ook unieke BCC-adressen.
+- Bedrijvenimport heeft nu een downloadbaar CSV-importsjabloon.
+- Importpreview geeft duidelijker aan hoeveel regels nieuw, dubbel of ongeldig zijn.
+- Import toont overgeslagen regels in een uitklapbare lijst.
+
+Let op:
+- Voor Excel-bestanden gebruikt de CRM de XLSX-bibliotheek via CDN.
+- CSV UTF-8 blijft de meest stabiele importvorm.

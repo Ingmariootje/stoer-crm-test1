@@ -1,0 +1,18 @@
+STOER CRM 3.4.0 - bulkacties, agendaweergaven en beheer
+
+Aangepast:
+- Nieuwe pagina Beheer toegevoegd.
+- Bulkacties toegevoegd voor scholen, bedrijven en instellingen.
+- Eén communicatie-item kan nu in één keer aan meerdere relaties worden toegevoegd.
+- Mailselectie uitgebreid met filters, teller en knop om communicatie voor de selectie te registreren.
+- Bedrijven importeren ondersteunt nu Excel (.xlsx/.xls) en CSV.
+- Import heeft een duidelijkere preview en slaat dubbele bedrijfsnamen over.
+- Agenda uitgebreid met Vandaag, Deze week en Maand.
+- Agenda heeft filter op teamlid.
+- Relatiekaarten verder compacter gemaakt zodat meer relaties tegelijk zichtbaar zijn.
+- Zoekfunctie bij relaties zoekt nu ook op contactpersoon, plaats, telefoon, mail en stichting.
+- Exportbestanden en mails gebruiken zichtbare naam STOER in plaats van Techkwadraat.
+
+Niet aangepast:
+- SQL-bestanden zijn bewust niet hernoemd.
+- Logo/favicons zijn nog niet toegevoegd.

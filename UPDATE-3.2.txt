@@ -1,0 +1,11 @@
+Techkwadraat CRM 3.2
+
+Wijzigingen:
+- Communicatie samengevoegd: mail, contactmomenten en notities via één knop + Communicatie.
+- Eén communicatietijdlijn per school/bedrijf/instelling.
+- Notities worden direct zichtbaar in de communicatietijdlijn.
+- Documenten blijven apart.
+- KPI's op detailpagina: Activiteiten, Communicatie, Documenten.
+- Wachtwoord wijzigen toegevoegd voor ingelogde gebruikers.
+
+Geen nieuwe SQL nodig als 3.1-login al werkt.

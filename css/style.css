@@ -3361,3 +3361,36 @@ table td {
 .modal-small {
   width: min(560px, 96vw);
 }
+
+/* CRM evenementen: geïsoleerde stijlen, versie evenement-uitbreiding */
+.crm-event-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(265px,1fr)); gap:16px; }
+.crm-event-card { text-align:left; display:grid; gap:10px; padding:22px; border:1px solid var(--line); border-radius:16px; background:#fff; color:inherit; cursor:pointer; width:100%; }
+.crm-event-card:hover { border-color:var(--blue); box-shadow:0 5px 18px rgba(23,53,96,.10); }
+.crm-event-card h2 { margin:0; font-size:21px; }
+.crm-event-card p { margin:0; color:var(--muted); }
+.crm-event-counts { display:flex; gap:10px; flex-wrap:wrap; font-weight:800; }
+.crm-event-counts span { background:#f0f5fc; border-radius:999px; padding:6px 11px; }
+.crm-event-toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
+.crm-event-toolbar h2 { margin:0; font-size:24px; }
+.crm-event-toolbar p { margin:3px 0 0; color:var(--muted); }
+.crm-event-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.crm-event-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:start; }
+.crm-event-panel { padding:18px; min-width:0; }
+.crm-event-panel-heading { display:flex; justify-content:space-between; gap:10px; align-items:center; margin-bottom:16px; }
+.crm-event-panel-heading h3 { margin:0; font-size:19px; }
+.crm-event-row { border-top:1px solid var(--line); padding:13px 0; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; }
+.crm-event-row-name { border:0; background:none; padding:0; color:var(--blue); font-weight:800; text-align:left; cursor:pointer; overflow-wrap:anywhere; }
+.crm-event-row-name:hover { text-decoration:underline; filter:none; }
+.crm-event-row-note { margin:6px 0 0; font-size:13px; line-height:1.5; color:var(--muted); white-space:pre-wrap; overflow-wrap:anywhere; }
+.crm-event-row-actions { display:flex; flex-direction:column; gap:5px; align-items:end; }
+.crm-event-row-actions button { font-size:12px; padding:6px 9px; }
+.crm-event-hint { margin:12px 0; color:var(--muted); line-height:1.5; }
+.crm-event-picker { display:grid; gap:8px; max-height:300px; overflow-y:auto; margin-top:14px; }
+.crm-event-picker-result { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px; border:1px solid var(--line); border-radius:10px; }
+.crm-event-picker-result > span { min-width:0; overflow-wrap:anywhere; }
+.crm-event-relation-box { border:1px solid var(--line); border-radius:12px; padding:14px; margin-bottom:14px; }
+.crm-event-relation-box h3 { margin:0 0 8px; }
+.crm-event-relation-row { padding:7px 0; border-top:1px solid var(--line); }
+.crm-event-relation-row p { margin:4px 0; white-space:pre-wrap; color:var(--muted); }
+.crm-event-warning { padding:14px; background:#fff7ed; border:1px solid #fed7aa; border-radius:12px; }
+@media (max-width:850px) { .crm-event-columns {grid-template-columns:1fr;} .crm-event-toolbar {align-items:flex-start;} }

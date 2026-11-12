@@ -125,6 +125,7 @@ function renderRelationDetail(org, type) {
           </div>
           ${missingAccountability.length ? `<button type="button" onclick="openAccountabilityModal('${missingAccountability[0].id}')">${missingAccountability.length} open</button>` : `<span class="accountability-complete">Compleet</span>`}
         </section>
+        ${renderOrganizationEventLinks(org.id)}
         <div class="panel-header">Activiteiten</div>
         <div class="compact-activity-list">
           ${appointments.map(a => relationActivityRow(a)).join("") || `<p class="empty">Nog geen activiteiten.</p>`}

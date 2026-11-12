@@ -10,6 +10,10 @@ const state = {
   notes: [],
   documents: [],
   contactMoments: [],
+  crmEvents: [],
+  eventParticipants: [],
+  selectedEventId: null,
+  eventsLoadError: null,
   selectedDate: new Date().toISOString().slice(0, 10),
   calendarMonth: new Date(),
   search: "",
@@ -21,6 +25,7 @@ const state = {
 
 const views = {
   dashboard: { title: "", subtitle: "", render: renderDashboard },
+  evenementen: { title: "Evenementen", subtitle: "Deelnemende scholen en bedrijven per evenement.", render: renderEvenementen },
   agenda: { title: "Agenda", subtitle: "Kalender met activiteiten en dagplanning.", render: renderAgenda },
   scholen: { title: "Scholen", subtitle: "Schoolrelaties, activiteiten en notities.", render: s => renderRelaties(s, "school") },
   bedrijven: { title: "Bedrijven", subtitle: "Bedrijfspartners en bedrijfsbezoeken.", render: s => renderRelaties(s, "bedrijf") },
@@ -31,13 +36,15 @@ const views = {
 };
 
 async function loadData() {
-  const [organizations, team, appointments, notes, documents, contactMoments] = await Promise.all([
+  const [organizations, team, appointments, notes, documents, contactMoments, crmEvents, eventParticipants] = await Promise.all([
     db.from("organizations").select("*").order("name", { ascending: true }),
     db.from("team_members").select("*").order("name", { ascending: true }),
     db.from("appointments").select("*").order("date", { ascending: true }),
     db.from("notes").select("*").order("created_at", { ascending: false }),
     db.from("documents").select("*").order("created_at", { ascending: false }),
-    db.from("contact_moments").select("*").order("contact_date", { ascending: false })
+    db.from("contact_moments").select("*").order("contact_date", { ascending: false }),
+    db.from("crm_events").select("*").order("created_at", { ascending: false }),
+    db.from("crm_event_participants").select("*").order("created_at", { ascending: true })
   ]);
 
   if (organizations.error) console.error(organizations.error);
@@ -53,6 +60,10 @@ async function loadData() {
   state.notes = notes.data || [];
   state.documents = documents.data || [];
   state.contactMoments = contactMoments.data || [];
+  state.crmEvents = crmEvents.data || [];
+  state.eventParticipants = eventParticipants.data || [];
+  state.eventsLoadError = crmEvents.error || eventParticipants.error || null;
+  if (state.eventsLoadError) console.warn("Evenementen nog niet actief: eerst supabase-evenementen.sql uitvoeren.", state.eventsLoadError);
 }
 
 async function refresh() {
@@ -74,6 +85,8 @@ function renderPageActions() {
   switch (state.view) {
     case "agenda":
       return `<button type="button" onclick="openAppointmentModal(state.selectedDate)">+ Activiteit</button>`;
+    case "evenementen":
+      return `<button type="button" onclick="openCrmEventModal()">+ Evenement</button>`;
     case "scholen":
       return `<button type="button" class="ghost" onclick="openMailSelectionModal('school')">Mailselectie</button><button type="button" class="ghost" onclick="openBulkCommunicationModal('school')">Bulkactie</button><button type="button" onclick="openRelationModal('school')">+ School</button>`;
     case "bedrijven":
@@ -91,6 +104,7 @@ function renderPageActions() {
 
 function setView(viewName) {
   state.view = viewName;
+  state.selectedEventId = null;
   state.selectedRelationId = null;
   state.selectedRelationSection = null;
   state.search = "";
@@ -110,6 +124,7 @@ function bindNavigation() {
 
 function bindViewActions() {
   if (state.view === "agenda") bindAgendaActions();
+  if (state.view === "evenementen") bindEvenementenActions();
   if (["scholen", "bedrijven", "instellingen"].includes(state.view)) bindRelatieActions();
   if (state.view === "team") bindTeamActions();
   if (state.view === "rapportages") bindRapportageActions();
